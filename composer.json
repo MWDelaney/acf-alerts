@@ -1,8 +1,8 @@
 {
-  "name": "mwdelaney/acf-cpt-alerts",
-  "description": "Post type and ACF fields for Alerts post types",
+  "name": "mwdelaney/acf-alerts",
+  "description": "Post type and ACF fields for global Alerts with Bootstrap styling",
   "keywords": ["wordpress", "plugin", "advanced custom fields", "custom post type"],
-  "homepage": "https://github.com/MWDelaney/acf-cpt-alerts",
+  "homepage": "https://github.com/MWDelaney/acf-alerts",
   "license": "MIT",
   "authors": [
     {
