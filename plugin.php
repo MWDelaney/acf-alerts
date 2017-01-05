@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Custom Post Type: Alerts
+Plugin Name: Global alerts
 Plugin URI:
-Description: Post type and ACF fields for Alerts post types.
+Description: Post type and ACF fields for global Alerts with Bootstrap styling.
 Version: 1.0
 Author: Michael W. Delaney
 Author URI:
