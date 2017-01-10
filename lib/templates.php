@@ -20,7 +20,7 @@ class Templates extends \Gamajo_Template_Loader {
 	 * @since 1.0.0
 	 * @type string
 	 */
-	protected $theme_template_directory = 'alerts-templates';
+	protected $theme_template_directory = 'templates/alerts';
 	/**
 	 * Reference to the root directory path of this plugin.
 	 *
