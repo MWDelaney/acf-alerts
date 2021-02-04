@@ -20,5 +20,3 @@ $options = [
 $alerts = new PostType($names, $options);
 // Set post type dashicon
 $alerts->icon('dashicons-warning');
-// Set post type translation domain
-$alerts->translation('cpt-alerts');
