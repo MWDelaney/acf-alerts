@@ -7,7 +7,7 @@ namespace MWD\Alerts;
  * Only need to specify class properties here.
  *
  */
-class Templates extends \Gamajo_Template_Loader
+class Views extends \Gamajo_Template_Loader
 {
     /**
      * Prefix for filter names.
@@ -22,7 +22,7 @@ class Templates extends \Gamajo_Template_Loader
      * @since 1.0.0
      * @type string
      */
-    protected $theme_template_directory = 'templates/alerts';
+    protected $theme_template_directory = 'views/alerts';
     /**
      * Reference to the root directory path of this plugin.
      *
@@ -42,5 +42,5 @@ class Templates extends \Gamajo_Template_Loader
    *
    * @var string
    */
-    protected $plugin_template_directory = 'templates';
+    protected $plugin_template_directory = 'views';
 }

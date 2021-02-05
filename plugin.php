@@ -21,8 +21,8 @@ require __DIR__ . '/vendor/autoload.php';
 define('ALERTS_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('ALERTS_PLUGIN_URL', plugin_dir_url(__FILE__));
 
-$alerts_init = new \MWD\Alerts\Init();
-$alerts_admin = new \MWD\Alerts\Admin();
+$alerts_init = new Init();
+$alerts_admin = new Admin();
 
 /**
  * Template wrapper
@@ -32,12 +32,12 @@ $alerts_admin = new \MWD\Alerts\Admin();
  */
 function template($slug, $load = null)
 {
-    $t = new \MWD\Alerts\Templates;
+    $t = new Views;
     $t->get_template_part($slug, $load);
 }
 
 function template_data($data, $name)
 {
-    $d = new \MWD\Alerts\Templates;
+    $d = new Views;
     $d->set_template_data($data, $name);
 }
