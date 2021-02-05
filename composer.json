@@ -13,8 +13,8 @@
   "type": "wordpress-muplugin",
   "require": {
     "php": ">=5.3.2",
-    "gamajo/template-loader": "^2.1",
-    "jjgrainger/posttypes": "^1.3.1"
+    "gamajo/template-loader": "^1.3.1",
+    "jjgrainger/posttypes": "^2.1"
 	},
   "autoload": {
     "psr-4": { "MWD\\Alerts\\": "src/" }

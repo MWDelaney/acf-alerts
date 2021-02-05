@@ -24,7 +24,7 @@ class ComposerStaticInitdbeb5ae336a8af71a1928bfe50af783b
         ),
         'MWD\\Alerts\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/lib',
+            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 

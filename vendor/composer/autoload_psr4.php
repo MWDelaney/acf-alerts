@@ -7,5 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'PostTypes\\' => array($vendorDir . '/jjgrainger/posttypes/src'),
-    'MWD\\Alerts\\' => array($baseDir . '/lib'),
+    'MWD\\Alerts\\' => array($baseDir . '/src'),
 );

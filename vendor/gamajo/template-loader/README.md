@@ -14,11 +14,21 @@ The `get_template_part()` function in WordPress was never really designed with p
 
 This isn't a WordPress plugin on its own, so the usual instructions don't apply. Instead:
 
+### Manually install class
 1. Copy [`class-gamajo-template-loader.php`](class-gamajo-template-loader.php) into your plugin. It can be into a file in the plugin root, or better, an `includes` directory.
-2. Create a new file, such as `class-your-plugin-template-loader.php`, in the same directory.
-3. Create a class in that file that extends `Gamajo_Template_Loader`. You can see the Meal Planner Template Loader example class below as a starting point if it helps.
-4. Override the class properties to suit your plugin. You could also override the `get_templates_dir()` method if it isn't right for you.
-5. You can now instantiate your custom template loader class, and use it to call the `get_template_part()` method. This could be within a shortcode callback, or something you want theme developers to include in their files.
+
+or:
+
+### Install class via Composer
+1. Tell Composer to install this class as a dependency: `composer require gamajo/template-loader`
+2. Recommended: Install the Mozart package: `composer require coenjacobs/mozart --dev` and [configure it](https://github.com/coenjacobs/mozart#configuration).
+3. The class is now renamed to use your own prefix, to prevent collisions with other plugins bundling this class.
+
+## Implement class
+1. Create a new file, such as `class-your-plugin-template-loader.php`, in the same directory.
+2. Create a class in that file that extends `Gamajo_Template_Loader` (or the new prefixed name, if you installed via Composer/Mozart). You can see the Meal Planner Template Loader example class below as a starting point if it helps.
+3. Override the class properties to suit your plugin. You could also override the `get_templates_dir()` method if it isn't right for you.
+4. You can now instantiate your custom template loader class, and use it to call the `get_template_part()` method. This could be within a shortcode callback, or something you want theme developers to include in their files.
 
   ~~~php
   // Template loader instantiated elsewhere, such as the main plugin file.
@@ -29,25 +39,27 @@ This isn't a WordPress plugin on its own, so the usual instructions don't apply.
   ~~~php
   $meal_planner_template_loader->get_template_part( 'recipe' );
   ~~~
-* If you want to pass data to the template, call the `set_template_data()` method with an array before calling `get_template_part()`.
+* If you want to pass data to the template, call the `set_template_data()` method with an array before calling `get_template_part()`. `set_template_data()` returns the loader object to allow for method chaining.
 
   ~~~php
   $data = array( 'foo' => 'bar', 'baz' => 'boom' );
-  $meal_planner_template_loader->set_template_data( $data );
-  $meal_planner_template_loader->get_template_part( 'recipe' );
+  $meal_planner_template_loader
+      ->set_template_data( $data );
+      ->get_template_part( 'recipe' );
   ~~~
   
-  The value of `bar` is now available inside the recipe template as `$data['foo']`.
+  The value of `bar` is now available inside the recipe template as `$data->foo`.
   
   If you wish to use a different variable name, add a second parameter to `set_template_data()`:
 
   ~~~php
   $data = array( 'foo' => 'bar', 'baz' => 'boom' );
-  $meal_planner_template_loader->set_template_data( $data, 'context' );
-  $meal_planner_template_loader->get_template_part( 'recipe', 'ingredients' );
+  $meal_planner_template_loader
+      ->set_template_data( $data, 'context' )
+      ->get_template_part( 'recipe', 'ingredients' );
   ~~~
   
-  The value of `bar` is now available inside the recipe template as `$context['foo']`.
+  The value of `bar` is now available inside the recipe template as `$context->foo`.
 
   This will try to load up `wp-content/themes/my-theme/meal-planner/recipe-ingredients.php`, or `wp-content/themes/my-theme/meal-planner/recipe.php`, then fallback to `wp-content/plugins/meal-planner/templates/recipe-ingredients.php` or `wp-content/plugins/meal-planner/templates/recipe.php`.
 
@@ -140,7 +152,7 @@ See the [change log](CHANGELOG.md).
 
 ## License
 
-[GPL-2.0+](LICENSE).
+[GPL 2.0 or later](LICENSE).
 
 ## Contributions
 
@@ -149,4 +161,4 @@ Contributions are welcome - fork, fix and send pull requests against the `develo
 ## Credits
 
 Built by [Gary Jones](https://twitter.com/GaryJ)  
-Copyright 2013 [Gamajo Tech](https://gamajo.com)
+Copyright 2013 [Gary Jones](https://garyjones.io)

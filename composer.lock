@@ -1,28 +1,38 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "61bf707d699e7d66154d63606e3492fb",
-    "content-hash": "fa2112730f04deba3e32e2a83766cda0",
+    "content-hash": "58265360c915cab7e33fab606627f4f4",
     "packages": [
         {
             "name": "gamajo/template-loader",
-            "version": "1.2.0",
+            "version": "1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GaryJones/Gamajo-Template-Loader.git",
-                "reference": "e53b4698670de81849e04c1d24a82e8466e59c99"
+                "reference": "fa92a37b780d945463f7fea328dce14933558752"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GaryJones/Gamajo-Template-Loader/zipball/e53b4698670de81849e04c1d24a82e8466e59c99",
-                "reference": "e53b4698670de81849e04c1d24a82e8466e59c99",
+                "url": "https://api.github.com/repos/GaryJones/Gamajo-Template-Loader/zipball/fa92a37b780d945463f7fea328dce14933558752",
+                "reference": "fa92a37b780d945463f7fea328dce14933558752",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
+                "php": ">=7.1",
+                "phpcompatibility/phpcompatibility-wp": "^1",
+                "roave/security-advisories": "dev-master",
+                "squizlabs/php_codesniffer": "^3.3",
+                "wp-coding-standards/wpcs": "^1"
+            },
+            "suggest": {
+                "coenjacobs/mozart": "Easily wrap this library with your own prefix, to prevent collisions when multiple plugins use this library"
             },
             "type": "library",
             "autoload": {
@@ -32,40 +42,43 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
                     "name": "Gary Jones",
-                    "email": "gamajo@gamajo.com",
-                    "homepage": "http://gamajo.com",
+                    "homepage": "https://gamajo.com",
                     "role": "Developer"
                 }
             ],
             "description": "A class for your WordPress plugin, to allow loading template parts with fallback through the child theme > parent theme > plugin",
-            "homepage": "http://github.com/GaryJones/Gamajo-Template-Loader",
+            "homepage": "https://github.com/GaryJones/Gamajo-Template-Loader",
             "keywords": [
                 "templates",
                 "wordpress"
             ],
-            "time": "2016-03-26 07:42:40"
+            "time": "2018-09-24T10:23:49+00:00"
         },
         {
             "name": "jjgrainger/posttypes",
-            "version": "v1.0",
+            "version": "2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jjgrainger/PostTypes.git",
-                "reference": "69d25ea289a984b6a8b068a7038aee66e9a6e0bf"
+                "reference": "a87584606e9ef726f7621c1d71a184fdf7282172"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jjgrainger/PostTypes/zipball/69d25ea289a984b6a8b068a7038aee66e9a6e0bf",
-                "reference": "69d25ea289a984b6a8b068a7038aee66e9a6e0bf",
+                "url": "https://api.github.com/repos/jjgrainger/PostTypes/zipball/a87584606e9ef726f7621c1d71a184fdf7282172",
+                "reference": "a87584606e9ef726f7621c1d71a184fdf7282172",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "8.*",
+                "squizlabs/php_codesniffer": "3.*"
             },
             "type": "library",
             "autoload": {
@@ -81,12 +94,12 @@
                 {
                     "name": "Joe Grainger",
                     "email": "hello@jjgrainger.co.uk",
-                    "homepage": "http://jjgrainger.co.uk"
+                    "homepage": "https://jjgrainger.co.uk"
                 }
             ],
-            "description": "A single class to help you build more advanced custom post types quickly.",
+            "description": "Simple WordPress custom post types.",
             "homepage": "https://github.com/jjgrainger/posttype",
-            "time": "2016-08-16 12:45:44"
+            "time": "2020-04-12T13:01:12+00:00"
         }
     ],
     "packages-dev": [],
@@ -98,5 +111,6 @@
     "platform": {
         "php": ">=5.3.2"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
